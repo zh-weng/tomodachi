@@ -1,321 +1,341 @@
 export const STRINGS = {
-  zh: {
-    title: '性格测试',
-    subtitle: '回答 20 道题，生成你的 Mii 设定',
-    startBtn: '开始测试 ▶',
-    backBtn: '◀ 返回',
-    nextBtn: '下一题 ▶',
-    resultBtn: '查看结果 ▶',
-    retryBtn: '重新测试',
-    copyBtn: '复制结果 ✦',
-    slidersTitle: '游戏滑块设定',
-    copyBoxTitle: '抄录到游戏机',
-    resultLabel: '你的 Mii 性格是',
-    toastMsg: '已复制到剪贴板！',
-    copyHeader: '🎮 Tomodachi Life 性格测试结果\n',
-    copyType: '性格类型：',
-    copyCat: '分类：',
-    copySliders: '🎚 游戏滑块设定：\n',
-    cats: {
-      considerate: '温和派',
-      outgoing: '活力派',
-      reserved: '沉稳派',
-      ambitious: '利落派'
+    zh: {
+        title: '性格测试',
+        subtitle: '回答 20 道题，生成你的 Mii 设定',
+        startBtn: '开始测试 ▶',
+        backBtn: '◀ 返回',
+        nextBtn: '下一题 ▶',
+        resultBtn: '查看结果 ▶',
+        retryBtn: '重新测试',
+        copyBtn: '复制结果 ✦',
+        slidersTitle: '游戏滑块设定',
+        copyBoxTitle: '抄录到游戏机',
+        resultLabel: '你的 Mii 性格是',
+        toastMsg: '已复制到剪贴板！',
+        copyHeader: '🎮 Tomodachi Life 性格测试结果\n',
+        copyType: '性格类型：',
+        copyCat: '分类：',
+        copySliders: '🎚 游戏滑块设定：\n',
+        cats: {
+            considerate: '温和派',
+            outgoing: '活力派',
+            reserved: '沉稳派',
+            ambitious: '利落派'
+        },
+        dims: {
+            movement: '行动',
+            speech: '话语',
+            expressiveness: '表情',
+            attitude: '想法',
+            overall: '总体来说'
+        },
+        sides: {
+            movement: ['从容', '利落'],
+            speech: ['温和', '严厉'],
+            expressiveness: ['淡然', '丰富'],
+            attitude: ['慎重', '简单'],
+            overall: ['通情达理', '性格张扬']
+        }
     },
-    dims: {
-      movement: '行动',
-      speech: '话语',
-      expressiveness: '表情',
-      attitude: '想法',
-      overall: '总体来说'
-    },
-    sides: {
-      movement: ['从容', '利落'],
-      speech: ['温和', '严厉'],
-      expressiveness: ['淡然', '丰富'],
-      attitude: ['慎重', '简单'],
-      overall: ['通情达理', '性格张扬']
+    en: {
+        title: 'Personality Quiz',
+        subtitle: 'Answer 20 questions to find your Mii personality',
+        startBtn: 'Start Quiz ▶',
+        backBtn: '◀ Back',
+        nextBtn: 'Next ▶',
+        resultBtn: 'See Results ▶',
+        retryBtn: 'Retake Quiz',
+        copyBtn: 'Copy Result ✦',
+        slidersTitle: 'In-Game Slider Settings',
+        copyBoxTitle: 'Copy to your Console',
+        resultLabel: 'Your Mii Personality',
+        toastMsg: 'Copied to clipboard!',
+        copyHeader: '🎮 Tomodachi Life Personality Quiz Result\n',
+        copyType: 'Personality: ',
+        copyCat: 'Faction: ',
+        copySliders: '🎚 In-Game Slider Settings:\n',
+        cats: {
+            considerate: 'Easygoing',
+            outgoing: 'Outgoing',
+            reserved: 'Reserved',
+            ambitious: 'Confident'
+        },
+        dims: {
+            movement: 'Movement',
+            speech: 'Speech',
+            expressiveness: 'Expression',
+            attitude: 'Thinking',
+            overall: 'Overall'
+        },
+        sides: {
+            movement: ['Slow', 'Quick'],
+            speech: ['Polite', 'Direct'],
+            expressiveness: ['Flat', 'Varied'],
+            attitude: ['Serious', 'Chill'],
+            overall: ['Normal', 'Quirky']
+        }
     }
-  },
-  en: {
-    title: 'Personality Quiz',
-    subtitle: 'Answer 20 questions to find your Mii personality',
-    startBtn: 'Start Quiz ▶',
-    backBtn: '◀ Back',
-    nextBtn: 'Next ▶',
-    resultBtn: 'See Results ▶',
-    retryBtn: 'Retake Quiz',
-    copyBtn: 'Copy Result ✦',
-    slidersTitle: 'In-Game Slider Settings',
-    copyBoxTitle: 'Copy to your Console',
-    resultLabel: 'Your Mii Personality',
-    toastMsg: 'Copied to clipboard!',
-    copyHeader: '🎮 Tomodachi Life Personality Quiz Result\n',
-    copyType: 'Personality: ',
-    copyCat: 'Faction: ',
-    copySliders: '🎚 In-Game Slider Settings:\n',
-    cats: {
-      considerate: 'Easygoing',
-      outgoing: 'Outgoing',
-      reserved: 'Reserved',
-      ambitious: 'Confident'
-    },
-    dims: {
-      movement: 'Movement',
-      speech: 'Speech',
-      expressiveness: 'Expression',
-      attitude: 'Thinking',
-      overall: 'Overall'
-    },
-    sides: {
-      movement: ['Slow', 'Quick'],
-      speech: ['Polite', 'Direct'],
-      expressiveness: ['Flat', 'Varied'],
-      attitude: ['Serious', 'Chill'],
-      overall: ['Normal', 'Quirky']
-    }
-  }
 };
 
 export const QUESTIONS_DATA = [
-  // --- Dimension 1: Movement (行动) ---
-  { id: 1, dimension: "movement", 
-    questionZh: "你在超市或便利店，突然发现忘带购物袋了，你的第一反应是：", 
-    questionEn: "You're at a grocery store and suddenly realize you forgot your bags. Your first reaction is:",
-    options: [
-      { textZh: "先站在那想一下，要不要去买一个，或者要不要少买点", textEn: "Pause and think about buying one or carrying fewer items", score: 0 },
-      { textZh: "稍微犹豫了一下，然后决定去服务台买一个", textEn: "Hesitate for a moment, then decide to buy one at the counter", score: 1 },
-      { textZh: "立刻转身去拿，没什么好想的", textEn: "Turn around and grab one immediately without thinking", score: 2 },
-      { textZh: "这种事根本不需要「反应」，已经走过去了", textEn: "No reaction needed; you're already at the bag station", score: 3 }
-    ]
-  },
-  { id: 2, dimension: "movement", 
-    questionZh: "面对一项有明确截止日期的任务，你的执行节奏是：", 
-    questionEn: "When facing a task with a clear deadline, your pace is:",
-    options: [
-      { textZh: "动作较慢，需要较长的缓冲和准备时间", textEn: "A bit slow, needing time to warm up", score: 0 },
-      { textZh: "按部就班，按照常规节奏推进", textEn: "Methodical, proceeding at a steady pace", score: 1 },
-      { textZh: "动作麻利，倾向于尽早处理", textEn: "Quick and efficient, handling it early", score: 2 },
-      { textZh: "极度高效，拿到任务立刻着手，迅速完工", textEn: "Extremely efficient, diving in right away", score: 3 }
-    ]
-  },
-  { id: 3, dimension: "movement", 
-    questionZh: "在决定就餐地点或购买日常用品时，你的决策速度：", 
-    questionEn: "When deciding on a meal or buying daily items, your decision speed is:",
-    options: [
-      { textZh: "需要较长时间反复对比和衡量", textEn: "Takes time to compare and weigh options", score: 0 },
-      { textZh: "稍作思考，权衡利弊后决定", textEn: "Thinks a bit and decides after weighing pros/cons", score: 1 },
-      { textZh: "较快做出决定，不愿在选择上耗时", textEn: "Fast decision, doesn't want to waste time", score: 2 },
-      { textZh: "极其果断利落，几乎不假思索", textEn: "Decisive and quick, almost instantaneous", score: 3 }
-    ]
-  },
-  { id: 4, dimension: "movement", 
-    questionZh: "朋友突然说「我们现在出发吧」，你的状态通常是：", 
-    questionEn: "A friend suddenly says, 'Let's head out now!' Your usual state is:",
-    options: [
-      { textZh: "还没准备好，需要再给我一点时间缓一缓", textEn: "Not ready yet; I need a few more minutes to prep", score: 0 },
-      { textZh: "基本可以，但还要收拾几分钟", textEn: "Mostly ready, but still need a couple of minutes to pack", score: 1 },
-      { textZh: "差不多随时可以走", textEn: "Almost ready to leave at any moment", score: 2 },
-      { textZh: "已经站起来了", textEn: "Already standing up and ready to move", score: 3 }
-    ]
-  },
+    // --- Dimension 1: Movement (行动: 0从容 → 3利落) ---
+    {
+        id: 1, dimension: "movement",
+        questionZh: "你在超市或便利店，突然发现忘带购物袋了，你的第一反应是：",
+        questionEn: "You're at a supermarket and realize you forgot your bag. Your first reaction:",
+        options: [
+            { textZh: "停在原地想一下，要不要去买一个，或者少买点", textEn: "Stop and think — should I buy one, or just buy less?", score: 0 },
+            { textZh: "稍微犹豫了一下，然后决定去服务台买一个", textEn: "Hesitate briefly, then decide to grab one from the counter", score: 1 },
+            { textZh: "立刻转身去拿，没什么好纠结的", textEn: "Turn around and get one immediately, no deliberation needed", score: 2 },
+            { textZh: "身体比脑子快，已经大步走过去拿袋子了", textEn: "Already walking over before the thought even fully forms", score: 3 }
+        ]
+    },
+    {
+        id: 2, dimension: "movement",
+        questionZh: "面对一项有明确截止日期的任务，你的执行节奏是：",
+        questionEn: "Given a task with a clear deadline, your working pace is:",
+        options: [
+            { textZh: "通常需要留出一定的心理建设和准备时间才会开始", textEn: "Usually need to set aside some time for mental prep before starting", score: 0 },
+            { textZh: "按部就班，按照常规节奏推进", textEn: "Work steadily at a normal pace", score: 1 },
+            { textZh: "动作麻利，倾向于尽早处理完", textEn: "Move efficiently and prefer to get it done early", score: 2 },
+            { textZh: "拿到任务的瞬间就开始推进，不留任何拖延空间", textEn: "Start the moment I receive it — no buffer, no delay", score: 3 }
+        ]
+    },
+    {
+        id: 3, dimension: "movement",
+        questionZh: "在决定就餐地点时，你的决策速度通常：",
+        questionEn: "When deciding where to eat, your decision speed is usually:",
+        options: [
+            { textZh: "习惯仔细对比各项评价和特色，倾向于做出最稳妥和满意的选择", textEn: "Carefully compare reviews and features, preferring the most reliable and satisfying choice", score: 0 },
+            { textZh: "稍作思考，权衡几个备选项后决定", textEn: "Think briefly, weigh a few options, then decide", score: 1 },
+            { textZh: "较快做出决定，觉得没必要在这上面浪费时间", textEn: "Decide quickly — not worth spending time on", score: 2 },
+            { textZh: "极其果断，看中哪个秒做决定", textEn: "Instant decision, no second-guessing", score: 3 }
+        ]
+    },
+    {
+        id: 4, dimension: "movement",
+        questionZh: "朋友突然发消息说「我们现在出发吧」，你的状态通常是：",
+        questionEn: "A friend texts 'let's head out now' — your usual state is:",
+        options: [
+            { textZh: "还没准备好，回复「再给我十分钟缓一缓」", textEn: "Not ready — reply 'give me ten more minutes'", score: 0 },
+            { textZh: "基本可以了，但还要收拾一下包换双鞋", textEn: "Almost ready, just need to grab my bag and change shoes", score: 1 },
+            { textZh: "差不多随时可以推门走人", textEn: "Pretty much ready to walk out the door anytime", score: 2 },
+            { textZh: "已经穿好鞋站在门口等了", textEn: "Already shoes on, standing at the door waiting", score: 3 }
+        ]
+    },
 
-  // --- Dimension 2: Speech (话语) ---
-  { id: 5, dimension: "speech", 
-    questionZh: "评价他人的工作成果或作品时，你倾向于：", 
-    questionEn: "When critiquing someone's work or creations, you tend to:",
-    options: [
-      { textZh: "极其委婉，哪怕不好也会先找优点夸奖", textEn: "Very tactful, always finding pros even if it's bad", score: 0 },
-      { textZh: "以温和且顾及对方感受的方式提出建议", textEn: "Gentle suggestions while considering their feelings", score: 1 },
-      { textZh: "客观直接地指出优缺点", textEn: "Objective and direct about strengths and weaknesses", score: 2 },
-      { textZh: "严厉且直白地指出缺陷，不留情面", textEn: "Blunt and harsh about flaws, no holding back", score: 3 }
-    ]
-  },
-  { id: 6, dimension: "speech", 
-    questionZh: "当你在团队沟通中遇到与他人意见不合时：", 
-    questionEn: "When you disagree with others in a team setting:",
-    options: [
-      { textZh: "倾向于妥协或保持沉默，以避免冲突", textEn: "Tend to compromise or stay silent to avoid conflict", score: 0 },
-      { textZh: "尝试用委婉的措辞表达自己的不同看法", textEn: "Try to use tactful wording for different views", score: 1 },
-      { textZh: "清晰明确地陈述自己的立场进行探讨", textEn: "Clearly and firmly state your position for discussion", score: 2 },
-      { textZh: "语气强硬地反驳，坚持自己的观点", textEn: "Forcefully rebut and stick to your guns", score: 3 }
-    ]
-  },
-  { id: 7, dimension: "speech", 
-    questionZh: "同事把一项本不属于你的工作推给你，你通常怎么做：", 
-    questionEn: "A colleague pushes a task onto you that isn't your responsibility. What do you do?",
-    options: [
-      { textZh: "接下来，想着以后再说，不太好意思当场拒绝", textEn: "Take it for now and worry later; I'm too shy to say no on the spot", score: 0 },
-      { textZh: "委婉表示自己也挺忙的，但没有明确拒绝", textEn: "Tactfully mention I'm busy, but don't give a clear 'no'", score: 1 },
-      { textZh: "直接说现在手头有事，这个帮不了", textEn: "Say directly that I'm busy and can't help with this", score: 2 },
-      { textZh: "当场说清楚这不在你职责范围内，不接", textEn: "State clearly that it's outside my scope and firmly decline", score: 3 }
-    ]
-  },
-  { id: 8, dimension: "speech", 
-    questionZh: "你在群里发了个提议，有人回复说「感觉不太行」但没说原因，你会：", 
-    questionEn: "You post a suggestion in a group chat, and someone replies 'I don't think this works' without explaining. You:",
-    options: [
-      { textZh: "觉得也许是自己没想周全，先不表态，等等看大家反应", textEn: "Assume I might have missed something, stay silent, and wait for others' reactions", score: 0 },
-      { textZh: "回一句「哈哈有什么顾虑可以说说」，语气比较轻松", textEn: "Reply with 'Haha, any specific concerns?' in a lighthearted tone", score: 1 },
-      { textZh: "直接问「哪里不行？」想把问题说清楚", textEn: "Ask directly 'What's the issue?' to get clear feedback", score: 2 },
-      { textZh: "回复「你说说具体哪里有问题，没有理由的话这个方向还是会推进」", textEn: "Reply 'Tell me the specific problem; otherwise, we'll proceed as planned'", score: 3 }
-    ]
-  },
+    // --- Dimension 2: Speech (话语: 0温和 → 3严厉) ---
+    {
+        id: 5, dimension: "speech",
+        questionZh: "当同事交给你一份质量不达标的内容让你反馈时：",
+        questionEn: "A colleague hands you substandard work and asks for feedback:",
+        options: [
+            { textZh: "先极力肯定对方的辛苦，再非常委婉地暗示哪里可以修改", textEn: "First affirm their effort enthusiastically, then very gently hint at improvements", score: 0 },
+            { textZh: "用温和商量的口吻提出建议：「这几个地方我们调整一下会不会更好？」", textEn: "Suggest warmly: 'Would it be better if we tweaked these parts?'", score: 1 },
+            { textZh: "直接挑明问题所在：「这几处逻辑不对，需要改。」", textEn: "Point it out directly: 'The logic here is off. These need to be fixed.'", score: 2 },
+            { textZh: "只给结论，不做铺垫：「有几处根本性的问题，我直接说，你听一下。」", textEn: "Skip the preamble: 'There are some fundamental issues. Let me just tell you straight.'", score: 3 }
+        ]
+    },
+    {
+        id: 6, dimension: "speech",
+        questionZh: "在团队讨论中，你的提议被别人质疑了，你的回应方式是：",
+        questionEn: "Your proposal gets challenged in a team discussion. You respond by:",
+        options: [
+            { textZh: "倾向于退让或软化态度，不想引发激烈的当面争论", textEn: "Incline to step back or soften your stance to avoid heated arguments", score: 0 },
+            { textZh: "耐心解释自己的出发点，试图柔和地达成共识", textEn: "Patiently explain your reasoning and try to reach consensus gently", score: 1 },
+            { textZh: "逻辑清晰地逐条反驳，就事论事地辩论", textEn: "Rebut point by point with clear logic, keeping it factual", score: 2 },
+            { textZh: "语气笃定且强势，用不容置疑的事实迅速结束争议", textEn: "Respond with firm certainty and hard facts, closing the argument quickly", score: 3 }
+        ]
+    },
+    {
+        id: 7, dimension: "speech",
+        questionZh: "当你需要别人帮忙做一件小事时，你通常怎么开口：",
+        questionEn: "When you need someone to help with a small thing, you typically say:",
+        options: [
+            { textZh: "铺垫很久：「在吗？不好意思打扰了，想请问一下你现在方便吗……」", textEn: "Long preamble: 'Hey, sorry to bother you, is this a good time…'", score: 0 },
+            { textZh: "带上友好的语气词：「能麻烦你帮我递一下那个东西吗？谢谢啦~」", textEn: "Friendly softener: 'Could you pass me that? Thanks so much~'", score: 1 },
+            { textZh: "正常陈述需求：「帮我把那个拿过来一下，谢谢。」", textEn: "Plain request: 'Pass me that, thanks.'", score: 2 },
+            { textZh: "指令型短句：「把那个给我。」", textEn: "Direct command: 'Give me that.'", score: 3 }
+        ]
+    },
+    {
+        id: 8, dimension: "speech",
+        questionZh: "在工作中遇到跨部门推诿、踢皮球的情况时：",
+        questionEn: "When you encounter cross-department buck-passing at work:",
+        options: [
+            { textZh: "不想引发更多纠纷，可能会选择自己默默多做一点把事情解决", textEn: "Prefer to quietly take on the work yourself to get it done and avoid disputes", score: 0 },
+            { textZh: "私下找对方好声好气地沟通，试图用人情推进", textEn: "Reach out privately and try to push things along with goodwill", score: 1 },
+            { textZh: "在群里把权责边界划清楚，要求对方按流程办", textEn: "Lay out responsibilities clearly in the group chat and ask them to follow process", score: 2 },
+            { textZh: "直接抛出规则和底线，语气强硬，不接受任何借口", textEn: "State the rules and your bottom line directly, firmly, no excuses accepted", score: 3 }
+        ]
+    },
 
-  // --- Dimension 3: Expression (表情) ---
-  { id: 9, dimension: "expressiveness", 
-    questionZh: "听到令人意外的消息时，你的面部表情通常：", 
-    questionEn: "When receiving surprising news, your facial expression is usually:",
-    options: [
-      { textZh: "几乎没有变化，面部保持平静", textEn: "Virtually no change, face stays calm", score: 0 },
-      { textZh: "仅有轻微的眼神变化或挑眉", textEn: "Only a slight eye change or raised eyebrow", score: 1 },
-      { textZh: "能明显看出惊讶的神态", textEn: "Visibly surprised expression", score: 2 },
-      { textZh: "表情极其丰富，有大幅度的神态变化", textEn: "Extremely expressive with large facial shifts", score: 3 }
-    ]
-  },
-  { id: 10, dimension: "expressiveness", 
-    questionZh: "在观看情绪起伏较大的电影或节目时：", 
-    questionEn: "While watching emotionally intense movies or shows:",
-    options: [
-      { textZh: "无论剧情如何，面部始终淡然", textEn: "Stays expressionless regardless of the plot", score: 0 },
-      { textZh: "偶尔露出轻微的微笑或皱眉", textEn: "Occasionally show a slight smile or frown", score: 1 },
-      { textZh: "随着剧情表现出明显的喜怒哀乐", textEn: "Visibly show joy, anger, or sadness with the plot", score: 2 },
-      { textZh: "情绪完全写在脸上，大笑或落泪", textEn: "Emotions are fully displayed; laughing or crying", score: 3 }
-    ]
-  },
-  { id: 11, dimension: "expressiveness", 
-    questionZh: "你在讲一件让你觉得很好笑的事，听的人没什么反应，你会：", 
-    questionEn: "You're telling a story you find hilarious, but the listener doesn't react. You:",
-    options: [
-      { textZh: "没什么感觉，本来也没期待对方笑", textEn: "Feel nothing; I didn't necessarily expect them to laugh anyway", score: 0 },
-      { textZh: "稍微有点尴尬，但很快就过去了", textEn: "Feel slightly awkward, but the feeling passes quickly", score: 1 },
-      { textZh: "忍不住自己先笑起来，觉得这事确实好笑", textEn: "Can't help laughing myself because I still think it's funny", score: 2 },
-      { textZh: "表情和语气已经把整个故事演了一遍，反应不反应无所谓了", textEn: "I've already acted out the whole story; their reaction doesn't matter", score: 3 }
-    ]
-  },
-  { id: 12, dimension: "expressiveness", 
-    questionZh: "被他人开玩笑或轻微调侃时：", 
-    questionEn: "When being joked with or lightheartedly teased:",
-    options: [
-      { textZh: "不动声色，很难看出情绪起伏", textEn: "Stonily calm, hard to tell what you feel", score: 0 },
-      { textZh: "礼貌性地微微一笑", textEn: "Only a polite, slight smile", score: 1 },
-      { textZh: "自然地笑出声，表情生动", textEn: "Laugh naturally with vivid expressions", score: 2 },
-      { textZh: "反应剧烈，表情极其夸张地回应", textEn: "React strongly with exaggerated expressions", score: 3 }
-    ]
-  },
+    // --- Dimension 3: Expressiveness (表情: 0淡然 → 3丰富) ---
+    {
+        id: 9, dimension: "expressiveness",
+        questionZh: "听到令人惊讶的八卦或消息时，你的面部反应：",
+        questionEn: "When you hear surprising gossip or news, your facial reaction is:",
+        options: [
+            { textZh: "表情几乎没有波澜，十分平静地听完", textEn: "Barely any change — maintain a calm expression", score: 0 },
+            { textZh: "眼神有微小变化，或轻微挑一下眉", textEn: "Slight eye shift or a barely-there eyebrow raise", score: 1 },
+            { textZh: "眼睛明显瞪大，能直观看出惊讶", textEn: "Eyes visibly widen — the surprise is obvious", score: 2 },
+            { textZh: "五官全部放大，表情夸张戏剧化", textEn: "Full-face reaction, extremely exaggerated and dramatic", score: 3 }
+        ]
+    },
+    {
+        id: 10, dimension: "expressiveness",
+        questionZh: "不小心吃到一口极其酸的东西，你脸上的反应是：",
+        questionEn: "You accidentally bite into something extremely sour. Your face:",
+        options: [
+            { textZh: "面不改色咽下去", textEn: "No expression at all — just swallow it", score: 0 },
+            { textZh: "微皱一下眉头或眯一下眼", textEn: "A slight brow furrow or squint", score: 1 },
+            { textZh: "明显酸倒牙的表情，甚至倒吸一口凉气", textEn: "Obvious wince, maybe a sharp intake of breath", score: 2 },
+            { textZh: "五官立刻缩成一团，可能有很强烈的肢体动作", textEn: "Face instantly scrunches up, combined with strong physical reactions", score: 3 }
+        ]
+    },
+    {
+        id: 11, dimension: "expressiveness",
+        questionZh: "你正在专心看手机上的搞笑视频，旁边的人看你的脸：",
+        questionEn: "You're watching a funny video on your phone. Someone watching your face would see:",
+        options: [
+            { textZh: "完全看不出你在看什么，表情像在审阅文件", textEn: "Nothing at all — you look like you're reviewing spreadsheets", score: 0 },
+            { textZh: "嘴角偶尔有一丝非常隐秘的上扬", textEn: "An occasional barely-visible twitch at the corner of your mouth", score: 1 },
+            { textZh: "有明显的笑容，眼角也会跟着弯起来", textEn: "A clear smile, eyes crinkling at the corners", score: 2 },
+            { textZh: "毫无保留地大笑，完全沉浸在快乐中", textEn: "Laughing out loud visibly, fully immersed in the joy", score: 3 }
+        ]
+    },
+    {
+        id: 12, dimension: "expressiveness",
+        questionZh: "别人在向你描述一个复杂的场景时，你听的过程中：",
+        questionEn: "While someone describes a complex situation to you, your face:",
+        options: [
+            { textZh: "表情始终保持平静，不会有太多明显的情绪起伏", textEn: "Stays mostly neutral — minimal outward reaction", score: 0 },
+            { textZh: "只有到了关键点才会点点头或给个微笑", textEn: "A nod or small smile only at the key moments", score: 1 },
+            { textZh: "表情会随着对方的故事自然起伏，给足反应", textEn: "Naturally follows along with the story, giving clear reactions", score: 2 },
+            { textZh: "眉飞色舞，表情比讲故事的人还要丰富生动", textEn: "More expressive than the person talking — living every moment with them", score: 3 }
+        ]
+    },
 
-  // --- Dimension 4: Attitude/Thinking (想法) ---
-  { id: 13, dimension: "attitude", 
-    questionZh: "你要去一个从没去过的城市旅行，出发前你会：", 
-    questionEn: "You're traveling to a city you've never been to. Before leaving, you:",
-    options: [
-      { textZh: "把可能遇到的问题列一遍，每个都想好应对方案", textEn: "List every potential problem and prepare a solution for each", score: 0 },
-      { textZh: "查好主要的交通和住宿，大致知道每天怎么走", textEn: "Check the main transport and hotels to have a rough sense of the route", score: 1 },
-      { textZh: "订好酒店和来回票，其他到了再说", textEn: "Book the hotel and tickets, then figure out the rest when I arrive", score: 2 },
-      { textZh: "买好票就出发，地图自己会带路的", textEn: "Just buy the ticket and go; the map will guide me when I get there", score: 3 }
-    ]
-  },
-  { id: 14, dimension: "attitude", 
-    questionZh: "发微信发错对象了，内容还挺尴尬，你的处理方式是：", 
-    questionEn: "You sent an embarrassing message to the wrong person on WeChat. Your reaction is:",
-    options: [
-      { textZh: "立刻撤回，然后琢磨要怎么解释，想了好一会儿", textEn: "Recall it immediately and spend a long time worrying about how to explain", score: 0 },
-      { textZh: "撤回，发条「手滑发错了」，然后担心了一阵", textEn: "Recall it, send 'Wrong person!', and stay worried for a while", score: 1 },
-      { textZh: "撤回或者不撤，发个表情包带过去", textEn: "Recall it or not, then just send a sticker to move on", score: 2 },
-      { textZh: "让它就那么在那，过一会儿对方也就忘了", textEn: "Just leave it there; they'll probably forget about it soon anyway", score: 3 }
-    ]
-  },
-  { id: 15, dimension: "attitude", 
-    questionZh: "朋友问你「这周末有空吗」，你通常怎么回答：", 
-    questionEn: "A friend asks, 'Are you free this weekend?' You usually respond by:",
-    options: [
-      { textZh: "先看一下日历，确认没有冲突，再想想自己状态，然后回复", textEn: "Check my calendar for conflicts and my personal energy before replying", score: 0 },
-      { textZh: "大概扫一眼有没有已经定好的事，然后回「应该有」", textEn: "Quickly scan for existing plans and reply 'I think so'", score: 1 },
-      { textZh: "直接说「有啊，干嘛」，细节之后再说", textEn: "Say 'Yes, why?' and figure out the details later", score: 2 },
-      { textZh: "回「有」，完全没想其他", textEn: "Just say 'Yes' without thinking about anything else", score: 3 }
-    ]
-  },
-  { id: 16, dimension: "attitude", 
-    questionZh: "在制定出行、旅游等计划时，你倾向于：", 
-    questionEn: "When planning trips or travels, you tend to:",
-    options: [
-      { textZh: "极度严谨，精确到小时并制定备用方案", textEn: "Ultra-rigorous, hourly schedule with backups", score: 0 },
-      { textZh: "确定核心行程，按计划有条不紊推进", textEn: "Set core itinerary and follow it steadily", score: 1 },
-      { textZh: "只有一个粗略框架，保留很大弹性", textEn: "Have a rough framework with high flexibility", score: 2 },
-      { textZh: "完全没有计划，觉得怎样都行顺其自然", textEn: "No plan at all, just go with the flow", score: 3 }
-    ]
-  },
+    // --- Dimension 4: Attitude (想法: 0慎重 → 3简单) ---
+    {
+        id: 13, dimension: "attitude",
+        questionZh: "当一个平时不怎么联系的人突然夸赞你时，你的脑回路是：",
+        questionEn: "Someone you rarely talk to suddenly gives you a compliment. Your first thought:",
+        options: [
+            { textZh: "会多想一层，揣测对方是不是有别的动机或潜台词", textEn: "Think a bit deeper about whether they might have an underlying motive", score: 0 },
+            { textZh: "会琢磨一下对方怎么突然说这个，但不至于太防备", textEn: "Wonder briefly why they're saying this now, but not overly suspicious", score: 1 },
+            { textZh: "觉得有点意外，但就当成普通的夸奖收下了", textEn: "A little surprised, but take it as a normal compliment", score: 2 },
+            { textZh: "完全按照字面意思理解，单纯觉得开心", textEn: "Take it at pure face value and just feel good about it", score: 3 }
+        ]
+    },
+    {
+        id: 14, dimension: "attitude",
+        questionZh: "电脑突然黑屏了一下，然后自己恢复正常了，你会：",
+        questionEn: "Your computer screen goes black for a second, then recovers. You:",
+        options: [
+            { textZh: "立刻联想到各种坏结果，搜索原因并着手排查隐患", textEn: "Immediately think of all the things that could be wrong, start googling and diagnosing", score: 0 },
+            { textZh: "心里留个心眼，打算有空备份一下数据", textEn: "Make a mental note to back up your data when you get a chance", score: 1 },
+            { textZh: "只要现在还能用，就先不管它", textEn: "If it works now, it can wait", score: 2 },
+            { textZh: "一秒钟后就忘了这事", textEn: "Forgotten about it one second later", score: 3 }
+        ]
+    },
+    {
+        id: 15, dimension: "attitude",
+        questionZh: "进入一个全是陌生人的新环境时，你的大脑后台在运行什么：",
+        questionEn: "You enter a room full of strangers. What's running in the background of your mind:",
+        options: [
+            { textZh: "高速运转，默默观察每个人的微表情和关系网，谨言慎行", textEn: "Running at full speed — quietly mapping expressions, dynamics, and relationships", score: 0 },
+            { textZh: "保持谨慎，先看别人怎么做，自己再跟着做", textEn: "Staying cautious — watching what others do before acting", score: 1 },
+            { textZh: "没想太多，顺其自然地打招呼交流", textEn: "Not overthinking it — just say hi and go with the flow", score: 2 },
+            { textZh: "单线程运行，觉得大家都是普通人，该吃吃该喝喝，极度松弛", textEn: "Single-thread mode — everyone's just people, eat, drink, relax", score: 3 }
+        ]
+    },
+    {
+        id: 16, dimension: "attitude",
+        questionZh: "朋友向你倒苦水吐槽某件事时，你通常如何看待这件事：",
+        questionEn: "A friend vents to you about a situation. How do you tend to process what they're saying:",
+        options: [
+            { textZh: "会习惯性地设想反转、深层原因以及另一个视角的可能性", textEn: "Automatically consider possible twists, underlying causes, and the other side's perspective", score: 0 },
+            { textZh: "觉得事情可能没那么简单，但当下会顺着朋友说", textEn: "Sense there might be more to it, but go along with your friend for now", score: 1 },
+            { textZh: "基本相信朋友的描述，顺理成章地给出建议", textEn: "Take their account at face value and offer advice accordingly", score: 2 },
+            { textZh: "站在朋友这边，朋友觉得别人有问题那就是别人的问题", textEn: "Take your friend's side unconditionally — if they say someone's at fault, they are", score: 3 }
+        ]
+    },
 
-  // --- Dimension 5: Overall (总体来说) ---
-  { id: 17, dimension: "overall", 
-    questionZh: "在群体合作中，你的行事风格更倾向于：", 
-    questionEn: "In group collaborations, your style is more like:",
-    options: [
-      { textZh: "顾全大局，高度配合常理和团队规矩", textEn: "Look at the big picture, highly cooperative with norms", score: 0 },
-      { textZh: "主要遵循常规，偶尔保留个人意见", textEn: "Mostly follow conventions, occasionally have own views", score: 1 },
-      { textZh: "在完成任务的前提下，体现一定个人特色", textEn: "Do the job while showing some personal flair", score: 2 },
-      { textZh: "特立独行，喜欢用自己与众不同的方式解决", textEn: "Maverick, preferring unique ways to solve things", score: 3 }
-    ]
-  },
-  { id: 18, dimension: "overall", 
-    questionZh: "面对大众流行的趋势和主流审美，你：", 
-    questionEn: "Faced with popular trends and mainstream tastes, you:",
-    options: [
-      { textZh: "很容易接受并融入大众偏好", textEn: "Easily accept and blend into crowd preferences", score: 0 },
-      { textZh: "觉得挺好，会选择性地跟风", textEn: "Think it's fine, selectively following along", score: 1 },
-      { textZh: "不太感冒，有自己一套独立的标准", textEn: "Not really into it, having independent standards", score: 2 },
-      { textZh: "追求绝对的个性，拒绝一切雷同和常规", textEn: "Pursue absolute individuality, reject all replicas", score: 3 }
-    ]
-  },
-  { id: 19, dimension: "overall", 
-    questionZh: "你的个人爱好和关注领域通常：", 
-    questionEn: "Your hobbies and interests usually are:",
-    options: [
-      { textZh: "非常贴近大众日常，和多数人都能聊得来", textEn: "Close to daily life, can chat with anyone", score: 0 },
-      { textZh: "相对普通，偶有一些小众爱好", textEn: "Relatively common, some niche hobbies", score: 1 },
-      { textZh: "比较独特，和主流兴趣有一定偏差", textEn: "Quite unique, deviating from mainstream interests", score: 2 },
-      { textZh: "极其冷门或古怪，极少有人能产生共鸣", textEn: "Extremely obscure or odd, rarely shared by others", score: 3 }
-    ]
-  },
-  { id: 20, dimension: "overall", 
-    questionZh: "别人通常对你的评价更接近于：", 
-    questionEn: "People's evaluations of you are closer to:",
-    options: [
-      { textZh: "靠谱、通情达理、接地气", textEn: "Reliable, reasonable, and down-to-earth", score: 0 },
-      { textZh: "比较好相处，随和", textEn: "Easy to get along with, agreeable", score: 1 },
-      { textZh: "有自己的想法 and 个性", textEn: "Have own ideas and personality", score: 2 },
-      { textZh: "极度个性鲜明，甚至有些不按常理出牌", textEn: "Strongly distinct personality, doing the unexpected", score: 3 }
-    ]
-  }
+    // --- Dimension 5: Overall (总体来说: 0通情达理 → 3性格张扬) ---
+    {
+        id: 17, dimension: "overall",
+        questionZh: "当你的个人喜好与团队的决定产生冲突时：",
+        questionEn: "When your personal preference conflicts with a group decision:",
+        options: [
+            { textZh: "倾向于顾全大局，配合集体的决定，避免产生不必要的摩擦", textEn: "Prioritize the big picture, cooperate with the group to avoid unnecessary friction", score: 0 },
+            { textZh: "内心有小保留，但在行动上会配合大家的决定", textEn: "Privately disagree a little, but go along with the group in practice", score: 1 },
+            { textZh: "会去争取一下自己的空间，试图在集体中保持自己的特色", textEn: "Push for your own space — try to keep your distinct touch within the group", score: 2 },
+            { textZh: "讨厌被同化，即便显得不合群，也要坚持自己的调性", textEn: "Strongly resist being assimilated — stick to your own style even if it looks odd", score: 3 }
+        ]
+    },
+    {
+        id: 18, dimension: "overall",
+        questionZh: "关于个人的日常穿着和打扮，你的底层逻辑是：",
+        questionEn: "When it comes to your everyday appearance, your core logic is:",
+        options: [
+            { textZh: "得体最重要，绝不能穿错衣服让别人觉得突兀", textEn: "Looking appropriate is everything — never stand out in the wrong way", score: 0 },
+            { textZh: "主要跟随大众流行，加一点点属于自己的小元素", textEn: "Mostly follow trends, with a small personal touch added", score: 1 },
+            { textZh: "衣服是我个性的延伸，不太在意现在流行什么", textEn: "Clothes are an extension of who I am — trends are largely irrelevant to me", score: 2 },
+            { textZh: "希望能展现极具个人特色的风格，越独特、越小众越好", textEn: "Aim to showcase a highly personal style — the more unique and niche, the better", score: 3 }
+        ]
+    },
+    {
+        id: 19, dimension: "overall",
+        questionZh: "你如何看待社会上的各种「约定俗成」和「潜规则」：",
+        questionEn: "How do you feel about social conventions and unwritten rules:",
+        options: [
+            { textZh: "存在即合理，严格遵守能带来安全感", textEn: "If they exist, there's a reason — following them strictly feels safe and right", score: 0 },
+            { textZh: "觉得有些规矩比较繁琐，但为了省事通常会默认遵守", textEn: "Some are tedious, but it's easier to just follow them to avoid hassle", score: 1 },
+            { textZh: "只遵守那些有逻辑的，对无意义的规矩会选择无视", textEn: "Follow the ones that make sense, quietly ignore the ones that don't", score: 2 },
+            { textZh: "规矩对我来说只是参考，感觉没意义的就不遵守，哪怕特立独行", textEn: "Rules are suggestions at best — if one seems pointless, I don't follow it, even if I stand out", score: 3 }
+        ]
+    },
+    {
+        id: 20, dimension: "overall",
+        questionZh: "你发了一条和大家观点截然不同的朋友圈，有人评论「你这想法好奇怪」，你的反应是：",
+        questionEn: "You post something with a view that differs from most people's, and someone comments 'that's a weird take'. You:",
+        options: [
+            { textZh: "有点在意，悄悄删掉或者改了措辞再发", textEn: "Feel bothered — quietly delete it or reword it before posting", score: 0 },
+            { textZh: "在评论里解释了一下自己的想法，希望对方能理解", textEn: "Reply explaining your reasoning, hoping they'll get it", score: 1 },
+            { textZh: "无所谓，回了个表情就过去了", textEn: "Unbothered — drop an emoji reply and move on", score: 2 },
+            { textZh: "心里反而有点满意，就喜欢和别人不一样", textEn: "Actually a little pleased — standing out from the crowd is kind of the point", score: 3 }
+        ]
+    }
 ];
 
 export const PERSONALITY_MATRIX = [
-  // Row 0 (Bottom)
-  [
-    { typeZh: "谨慎寡言型", typeEn: "Introvert", factionZh: "沉稳派", factionEn: "Reserved", color: "bg-emerald-500" },
-    { typeZh: "认真勤勉型", typeEn: "Thinker", factionZh: "沉稳派", factionEn: "Reserved", color: "bg-emerald-500" },
-    { typeZh: "独立率直型", typeEn: "Individualist", factionZh: "利落派", factionEn: "Confident", color: "bg-blue-500" },
-    { typeZh: "自信果断型", typeEn: "Busy Bee", factionZh: "利落派", factionEn: "Confident", color: "bg-blue-500" }
-  ],
-  // Row 1
-  [
-    { typeZh: "坚忍不拔型", typeEn: "Patient", factionZh: "沉稳派", factionEn: "Reserved", color: "bg-emerald-500" },
-    { typeZh: "踏实内敛型", typeEn: "Perfectionist", factionZh: "沉稳派", factionEn: "Reserved", color: "bg-emerald-500" },
-    { typeZh: "雷厉风行型", typeEn: "Achiever", factionZh: "利落派", factionEn: "Confident", color: "bg-blue-500" },
-    { typeZh: "严肃领袖型", typeEn: "Leader", factionZh: "利落派", factionEn: "Confident", color: "bg-blue-500" }
-  ],
-  // Row 2
-  [
-    { typeZh: "温柔体贴型", typeEn: "Buddy", factionZh: "温和派", factionEn: "Easygoing", color: "bg-yellow-400" },
-    { typeZh: "悠悠哉哉型", typeEn: "Softie", factionZh: "温和派", factionEn: "Easygoing", color: "bg-yellow-400" },
-    { typeZh: "欢乐快活型", typeEn: "Bubbly", factionZh: "活力派", factionEn: "Outgoing", color: "bg-red-500" },
-    { typeZh: "热血沸腾型", typeEn: "Hot-Blooded", factionZh: "活力派", factionEn: "Outgoing", color: "bg-red-500" }
-  ],
-  // Row 3 (Top)
-  [
-    { typeZh: "天真无邪型", typeEn: "Dreamer", factionZh: "温和派", factionEn: "Easygoing", color: "bg-yellow-400" },
-    { typeZh: "笑口常开型", typeEn: "Optimist", factionZh: "温和派", factionEn: "Easygoing", color: "bg-yellow-400" },
-    { typeZh: "众人焦点型", typeEn: "Charmer", factionZh: "活力派", factionEn: "Outgoing", color: "bg-red-500" },
-    { typeZh: "勇往直前型", typeEn: "Adventurer", factionZh: "活力派", factionEn: "Outgoing", color: "bg-red-500" }
-  ]
+    // Row 0 (Bottom)
+    [
+        { typeZh: "谨慎寡言型", typeEn: "Introvert", factionZh: "沉稳派", factionEn: "Reserved", color: "bg-emerald-500" },
+        { typeZh: "认真勤勉型", typeEn: "Thinker", factionZh: "沉稳派", factionEn: "Reserved", color: "bg-emerald-500" },
+        { typeZh: "独立率直型", typeEn: "Individualist", factionZh: "利落派", factionEn: "Confident", color: "bg-blue-500" },
+        { typeZh: "自信果断型", typeEn: "Busy Bee", factionZh: "利落派", factionEn: "Confident", color: "bg-blue-500" }
+    ],
+    // Row 1
+    [
+        { typeZh: "坚忍不拔型", typeEn: "Patient", factionZh: "沉稳派", factionEn: "Reserved", color: "bg-emerald-500" },
+        { typeZh: "踏实内敛型", typeEn: "Perfectionist", factionZh: "沉稳派", factionEn: "Reserved", color: "bg-emerald-500" },
+        { typeZh: "雷厉风行型", typeEn: "Achiever", factionZh: "利落派", factionEn: "Confident", color: "bg-blue-500" },
+        { typeZh: "严肃领袖型", typeEn: "Leader", factionZh: "利落派", factionEn: "Confident", color: "bg-blue-500" }
+    ],
+    // Row 2
+    [
+        { typeZh: "温柔体贴型", typeEn: "Buddy", factionZh: "温和派", factionEn: "Easygoing", color: "bg-yellow-400" },
+        { typeZh: "悠悠哉哉型", typeEn: "Softie", factionZh: "温和派", factionEn: "Easygoing", color: "bg-yellow-400" },
+        { typeZh: "欢乐快活型", typeEn: "Bubbly", factionZh: "活力派", factionEn: "Outgoing", color: "bg-red-500" },
+        { typeZh: "热血沸腾型", typeEn: "Hot-Blooded", factionZh: "活力派", factionEn: "Outgoing", color: "bg-red-500" }
+    ],
+    // Row 3 (Top)
+    [
+        { typeZh: "天真无邪型", typeEn: "Dreamer", factionZh: "温和派", factionEn: "Easygoing", color: "bg-yellow-400" },
+        { typeZh: "笑口常开型", typeEn: "Optimist", factionZh: "温和派", factionEn: "Easygoing", color: "bg-yellow-400" },
+        { typeZh: "众人焦点型", typeEn: "Charmer", factionZh: "活力派", factionEn: "Outgoing", color: "bg-red-500" },
+        { typeZh: "勇往直前型", typeEn: "Adventurer", factionZh: "活力派", factionEn: "Outgoing", color: "bg-red-500" }
+    ]
 ];

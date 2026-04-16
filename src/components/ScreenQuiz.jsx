@@ -3,15 +3,21 @@ import { For } from 'solid-js';
 import ChoiceItem from './Shared/ChoiceItem';
 
 export default function ScreenQuiz() {
-  const progressPercent = () => (Object.keys(answers()).length / (shuffledQuestions().length || 1)) * 100;
+  const answeredCount = () => Object.keys(answers()).length;
+  const progressPercent = () => (answeredCount() / (shuffledQuestions().length || 1)) * 100;
   const currentNum = () => currentQuestionIndex() + 1;
   const totalNum = () => shuffledQuestions().length;
 
   return (
     <div class="screen active" id="screen-quiz">
       <div class="quiz-header">
+        <div class="dim-badge">
+          {currentNum()} / {totalNum()}
+        </div>
         <div class="progress-container">
-          <div class="progress-text">{currentNum()} / {totalNum()}</div>
+          <div class="progress-text">
+            {Math.round(progressPercent())}% {lang === 'zh' ? '已完成' : 'done'}
+          </div>
           <div class="progress-bar-wrap">
             <div class="progress-bar-fill" style={{ width: `${progressPercent()}%` }}></div>
           </div>
@@ -19,11 +25,13 @@ export default function ScreenQuiz() {
       </div>
 
       <div class="question-card">
-        <p class="q-text">{lang === 'zh' ? currentQuestion().questionZh : currentQuestion().questionEn}</p>
+        <p class="q-text">
+          {lang === 'zh' ? currentQuestion().questionZh : currentQuestion().questionEn}
+        </p>
         <div class="choices-list">
           <For each={currentQuestion().options}>
             {(option) => (
-              <ChoiceItem 
+              <ChoiceItem
                 text={lang === 'zh' ? option.textZh : option.textEn}
                 value={option.score}
                 questionId={currentQuestion().id}
@@ -34,14 +42,14 @@ export default function ScreenQuiz() {
       </div>
 
       <div class="quiz-nav">
-        <button 
-          class="nav-btn back" 
+        <button
+          class="nav-btn back"
           style={{ visibility: currentQuestionIndex() === 0 ? 'hidden' : 'visible' }}
           onClick={prevQuestion}
         >
           {t('backBtn')}
         </button>
-        <button 
+        <button
           class="nav-btn forward"
           disabled={answers()[currentQuestion().id] === undefined}
           onClick={nextQuestion}

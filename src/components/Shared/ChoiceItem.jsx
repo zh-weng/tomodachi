@@ -1,4 +1,4 @@
-import { selectAnswer, nextQuestion, answers, lang } from '../../store/quiz';
+import { selectAnswer, answers } from '../../store/quiz';
 
 export default function ChoiceItem(props) {
   const isSelected = () => answers()[props.questionId] === props.value;
@@ -8,9 +8,12 @@ export default function ChoiceItem(props) {
   };
 
   return (
-    <div 
+    <div
       class={`choice-item ${isSelected() ? 'selected' : ''}`}
       onClick={handleClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => e.key === 'Enter' && handleClick()}
     >
       <div class="check-icon">{isSelected() ? '✓' : ''}</div>
       <span>{props.text}</span>
